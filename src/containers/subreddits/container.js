@@ -17,7 +17,7 @@ class SubredditList extends Component {
     return this.props.subreddits.map((sub) => {
       return <div>
               <h3>{sub.display_name}</h3>
-            </div>
+             </div>
     });
   }
 
