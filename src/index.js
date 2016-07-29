@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './components/app';
 import rootReducer from './reducers';
+import promiseMiddleware from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
 
 const store = createStore(
-  rootReducer
+  rootReducer,
+  applyMiddleware(ReduxThunk)
 );
 
 ReactDOM.render(
@@ -16,4 +19,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#app')
 );
-

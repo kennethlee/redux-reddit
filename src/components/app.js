@@ -11,14 +11,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPopularSubs();
+    this.props.fetchPopularSubs()
   }
 
   renderSubreddits() {
+    console.log("IN RENDER ", this.props.subreddits)
     return this.props.subreddits.map((sub) => {
       return <div>
-        <h3>{sub.display_name}</h3>
-      </div>
+              <h3>{sub.display_name}</h3>
+            </div>
     });
   }
 
