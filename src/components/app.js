@@ -1,5 +1,5 @@
 import React from 'react';
-import SubredditList from '../containers/subreddits/container';
+import SubredditList from './subreddits/container';
 
 export default () => {
   return (
