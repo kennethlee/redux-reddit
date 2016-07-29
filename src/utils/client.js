@@ -13,4 +13,14 @@ Client.fetchSubreddits = () => {
   });
 };
 
+Client.fetchPosts = (url) => {
+  const fullURL = `${REDDIT_HOST}${url}.json`;
+  console.log('URL is', url);
+  return axios.get(fullURL)
+    .then((response) => {
+      console.log(response);
+      return response.data.data.children.map(child => child.data);
+    });
+};
+
 module.exports = Client;

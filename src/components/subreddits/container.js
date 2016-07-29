@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { fetchPopularSubs } from '../../actions';
+import Subreddit from './';
+import { fetchPopularSubs, fetchPosts } from '../../actions';
 
 class SubredditList extends Component {
   constructor(props) {
@@ -15,9 +16,15 @@ class SubredditList extends Component {
 
   renderSubreddits() {
     return this.props.subreddits.map((sub) => {
-      return <div>
-              <h3>{sub.display_name}</h3>
-             </div>
+      return (
+        <Subreddit
+          title={sub.display_name}
+          key={sub.id}
+          description={sub.public_description}
+          url={sub.url}
+          fetchPosts={this.props.fetchPosts}
+        />
+      );
     });
   }
 
@@ -31,7 +38,11 @@ class SubredditList extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchPopularSubs: fetchPopularSubs }, dispatch);
+  return bindActionCreators({
+    fetchPopularSubs: fetchPopularSubs,
+    fetchPosts: fetchPosts },
+    dispatch
+  );
 }
 
 function mapStateToProps(state) {

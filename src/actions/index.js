@@ -9,11 +9,26 @@ export function fetchPopularSubs() {
   }
 }
 
-
-
 export function setPopularSubs(response) {
   return {
     type: 'SET_SUBREDDITS',
     payload: response
   };
 }
+
+export function fetchPosts(url) {
+  return dispatch => {
+    return Client.fetchPosts(url)
+      .then((response) => {
+        dispatch(setPosts(response))
+      });
+  }
+}
+
+function setPosts(response) {
+  return {
+    type: 'SET_POSTS',
+    payload: response,
+  }
+}
+
