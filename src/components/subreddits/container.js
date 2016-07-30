@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import styles from '../../utils/styles';
 
 import Subreddit from './';
 import { fetchPopularSubs, fetchPosts } from '../../actions';
@@ -30,9 +31,9 @@ class SubredditList extends Component {
 
   render() {
     return (
-      <div>
+      <ul style={styles.subredditsContainer}>
         {this.renderSubreddits()}
-      </div>
+      </ul>
     );
   }
 }

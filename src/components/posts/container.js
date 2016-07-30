@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Post from './';
+import styles from '../../utils/styles';
 
 class Posts extends Component {
   constructor(props) {
@@ -8,13 +10,22 @@ class Posts extends Component {
 
   renderPosts(posts) {
     return posts.map((post) => {
-      return <div key={post.id}>{post.title}</div>
+      return <Post key={post.id}
+                   title={post.title}
+             />
     });
   };
 
   render() {
     return (
-      <div>{this.renderPosts(this.props.currentPosts)}</div>
+      // <ul style={styles.postsContainer}>
+      //   {this.renderPosts(this.props.currentPosts)}
+      // </ul>
+      <table>
+        <tbody>
+          {this.renderPosts(this.props.currentPosts)}
+        </tbody>
+      </table>
     );
   }
 }
