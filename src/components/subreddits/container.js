@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styles from '../../utils/styles';
 
 import Subreddit from './';
-import { fetchPopularSubs, fetchPosts, setActive } from '../../actions';
+import { fetchPopularSubs, fetchPosts, setActive, setCurrentTitle } from '../../actions';
 
 class SubredditList extends Component {
   constructor(props) {
@@ -19,14 +19,16 @@ class SubredditList extends Component {
     return this.props.subreddits.map((sub) => {
       return (
         <Subreddit
-          title={sub.display_name}
-          key={sub.id}
-          id={sub.id}
-          description={sub.public_description}
-          url={sub.url}
           fetchPosts={this.props.fetchPosts}
           setActive={this.props.setActive}
+          setCurrentTitle={this.props.setCurrentTitle}
+          key={sub.id}
+          id={sub.id}
           activeID={this.props.activeID}
+          display={sub.display_name}
+          title={sub.title}
+          description={sub.public_description}
+          url={sub.url}
         />
       );
     });
@@ -45,7 +47,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     fetchPopularSubs: fetchPopularSubs,
     fetchPosts: fetchPosts,
-    setActive: setActive },
+    setActive: setActive,
+    setCurrentTitle: setCurrentTitle },
     dispatch
   );
 }

@@ -13,7 +13,8 @@ export default props => <li style={Object.assign({}, styles.subredditItem, activ
                             onClick={ () => {
                               props.fetchPosts.call(this, props.url);
                               props.setActive.call(this, props.id);
+                              props.setCurrentTitle.call(this, props.display, props.title)
                               }
                             }>
-                            {props.title}
+                            {props.display}
                         </li>

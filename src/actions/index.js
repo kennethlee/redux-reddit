@@ -39,3 +39,9 @@ export function setActive(id) {
   }
 }
 
+export function setCurrentTitle(display, title) {
+  return {
+    type: 'SET_TITLE',
+    payload: { display, title }
+  }
+}

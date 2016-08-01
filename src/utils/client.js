@@ -7,7 +7,6 @@ Client.fetchSubreddits = () => {
   return axios.get(`${REDDIT_HOST}/subreddits/popular.json`)
   .then((response) => {
     return response.data.data.children.map((child) => {
-      // console.log(child.data);
       return child.data;
     });
   });

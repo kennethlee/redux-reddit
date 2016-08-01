@@ -28,4 +28,13 @@ module.exports = {
   active: {
     backgroundColor: 'white',
   },
+  display: {
+    textTransform: 'uppercase',
+    display: 'inline-block',
+  },
+  link: {
+    textDecoration: 'none',
+    color: '#0B486B',
+    cursor: 'pointer',
+  },
 };
