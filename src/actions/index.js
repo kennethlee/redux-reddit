@@ -32,3 +32,10 @@ function setPosts(response) {
   }
 }
 
+export function setActive(id) {
+  return {
+    type: 'SET_ACTIVE',
+    payload: id,
+  }
+}
+

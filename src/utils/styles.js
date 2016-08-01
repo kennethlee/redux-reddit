@@ -24,5 +24,8 @@ module.exports = {
     padding: '3%',
     fontSize: '1em',
     backgroundColor: '#A8DBA8',
-  }
-}
+  },
+  active: {
+    backgroundColor: 'white',
+  },
+};
