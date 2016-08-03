@@ -18,6 +18,13 @@ module.exports = {
     color: '#0B486B',
     padding: '5%',
     fontSize: '1em',
+    ':hover': {
+      cursor: 'pointer',
+      backgroundColor: '#CFF09E',
+    }
+  },
+  title: {
+    backgroundColor: '#79BD9A'
   },
   postItem: {
     color: '#0B486B',
@@ -26,7 +33,7 @@ module.exports = {
     backgroundColor: '#A8DBA8',
   },
   active: {
-    backgroundColor: 'white',
+    backgroundColor: '#79BD9A',
   },
   display: {
     textTransform: 'uppercase',

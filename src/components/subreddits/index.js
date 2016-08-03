@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../utils/styles';
+import Radium from 'radium';
 
 const activeSubreddit = (id, activeID) => {
   if (id === activeID) {
@@ -9,7 +10,7 @@ const activeSubreddit = (id, activeID) => {
   }
 }
 
-export default props => <li style={Object.assign({}, styles.subredditItem, activeSubreddit(props.id, props.activeID))}
+const Subreddit = props => <li style={Object.assign({}, styles.subredditItem, activeSubreddit(props.id, props.activeID))}
                             onClick={ () => {
                               props.fetchPosts.call(this, props.url);
                               props.setActive.call(this, props.id);
@@ -18,3 +19,5 @@ export default props => <li style={Object.assign({}, styles.subredditItem, activ
                             }>
                             {props.display}
                         </li>
+
+module.exports = Radium(Subreddit);
