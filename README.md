@@ -1,4 +1,4 @@
-### redux-reddit
+### [redux-reddit](http://redux-reddit.surge.sh)
 
 A simple reddit reader application built with React, Redux, and styled with Radium.
 
@@ -11,6 +11,7 @@ Authors: [@thomaslo](https://github.com/thomasjinlo) and [@kennethlee](https://g
 - Redux
 - Radium
 - webpack
+- Redux-Thunk
 
 ![redux-reddit](/img/reddit-screenshot.png)
 
