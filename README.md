@@ -13,5 +13,7 @@ Authors: [@thomaslo](https://github.com/thomasjinlo) and [@kennethlee](https://g
 - webpack
 - Redux-Thunk
 
-![redux-reddit](/img/reddit-screenshot.png)
+<div align="center">
+  <a href="http://redux-reddit.surge.sh"><img src="/img/reddit-screenshot.png" /></a>
+</div>
 
